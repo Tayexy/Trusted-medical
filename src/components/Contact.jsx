@@ -7,7 +7,7 @@ function Contact() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [state, handleSubmit] = useForm("xdaljjow");
+  const [state, handleSubmit] = useForm(import.meta.env.VITE_FORMSPREE_CONTACT);
 
   if (state.succeeded) {
     return <p className="text-center mt-10 text-white bg-gray-900 p-10">Thank You. You will hear from us soonest</p>;

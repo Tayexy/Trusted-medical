@@ -1,16 +1,143 @@
-# React + Vite
+# Trusted Medical Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Trusted Medical is a modern web application designed to help individuals, families, and organizations make better healthcare decisions. The platform connects users with professional medical consultants and provides reliable health information through consultations and blog articles.
 
-Currently, two official plugins are available:
+The website allows users to learn about medical services, read health-related articles, book consultations, and subscribe for health insights.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Medical consultation booking
+* Health advisory services information
+* Blog section with medical articles
+* Email subscription for health insights
+* Responsive design for mobile, tablet, and desktop
+* Client testimonials slider
+* Clean and modern user interface
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+The project was built using modern web technologies:
+
+* **React** – Frontend library for building the user interface
+* **Vite** – Fast development build tool
+* **Firebase** – Backend services and hosting
+* **Swiper.js** – Used for the testimonial slider
+* **EmailJS** – Sends emails directly from the contact/booking forms
+* **React Toastify** – Displays success and error notifications
+* **Tailwind CSS** – Utility-first CSS framework for styling
+
+---
+
+## Installation
+
+To run this project locally, follow these steps:
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/trusted-medical.git
+```
+
+### 2. Navigate to the project folder
+
+```bash
+cd trusted-medical
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+The application will run on:
+
+```
+http://localhost:5173
+```
+
+---
+
+## Project Structure
+
+```
+src
+│
+├── components
+│   ├── Blog.jsx
+│   ├── BlogPost.jsx
+│   ├── Navbar.jsx
+│   ├── Footer.jsx
+│
+├── pages
+│   ├── Home.jsx
+│   ├── About.jsx
+│   ├── Services.jsx
+│   ├── Booking.jsx
+│
+├── data
+│   └── blogData.js
+│
+├── assets
+│   └── images
+│
+└── App.jsx
+```
+
+---
+
+## Key Libraries
+
+### Swiper.js
+
+Used to create the testimonial slider and interactive carousels.
+
+### Firebase
+
+Provides backend services such as hosting, authentication, or database features if required.
+
+### EmailJS
+
+Allows users to send booking requests or contact messages directly from the website without a backend server.
+
+### React Toastify
+
+Displays user notifications such as:
+
+* Booking successful
+* Form submission confirmation
+* Error alerts
+
+---
+
+## Future Improvements
+
+* Online doctor availability system
+* Patient dashboard
+* Appointment history
+* Secure medical document uploads
+* Live chat consultation
+
+---
+
+## Author
+
+**Taiye Goodness Olawuyi**
+
+Developer and creator of the Trusted Medical platform.
+
+---
+
+## License
+
+This project is open-source and available for learning and development purposes.

@@ -1,15 +1,37 @@
 import React, {useState} from 'react'
 import emailjs from "emailjs-com"
+import { useAuth } from "../context/useAuth";
+import { toast } from "react-toastify";
 
 function Booking() {
  const [name, setName] =useState("");
   const [email, setEmail] =useState("");
   const [number, setNumber] =useState("");
-  const [appointment, setAppointment] = useState("");
   const [consultationType, setConsultationType] = useState("");
   const [message, setMessage] = useState("");
+  const [selectedDateTime, setSelectedDateTime ] = useState("");
+  const { user } = useAuth();
 
 
+  function handleBooking(e){
+    const value = e.target.value;
+    const date = new Date(value);
+    const hours = date.getHours();
+
+    if(hours <9 || hours >= 13) {
+      toast.error("bookings not allowed at this time");
+      return;
+    }
+    setSelectedDateTime(value);
+    toast.success("booking confirmed", {
+      style:{
+        backgroundColor: "#101828",
+        color: "#ffffff",
+
+      },
+
+    });
+  }
 function handleSubmit(e) {
   e.preventDefault();
 
@@ -19,7 +41,7 @@ function handleSubmit(e) {
     name,
     email,
     number,
-    appointment,
+    selectedDateTime,
     consultationType,
     message,
   };
@@ -35,18 +57,22 @@ function handleSubmit(e) {
 
  
 
-  alert("Your Appointment has been booked");
+  toast.success("Your Appointment has been booked");
 
   // Reset form
   setName("");
   setEmail("");
   setNumber("");
-  setAppointment("");
+  setSelectedDateTime("");
   setConsultationType("");
   setMessage("");
 }
 
   return (
+    <div>
+      {!user ? (
+        <p className="text-center text-lg font-bold">💙 Your health journey starts here. Please login to book your appointment.</p>
+      ) :(
     <>
    <section className="bg-gray-900 text-white text-center p-6 md:p-10">
   <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
@@ -86,7 +112,9 @@ function handleSubmit(e) {
 
      <div className="flex flex-col ">
       <h3 className="text-center ">Preferred Appointment</h3>
-      <input type="datetime-local"value={appointment} onChange={(e)=> setAppointment(e.target.value)} className="border p-2 rounded mt-2" required />
+      <input type="datetime-local"value={selectedDateTime} onChange={handleBooking} className="border p-2 rounded mt-2" required
+       />
+       {selectedDateTime && <p>Your Booking {selectedDateTime}</p>}
     </div>
      <div className="flex flex-col">
       <h3 className="text-center">How do you feel?</h3>
@@ -104,6 +132,9 @@ function handleSubmit(e) {
 
 
    </>
+   )}
+   </div>
+      
   )
 }
 

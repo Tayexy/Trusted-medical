@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 @import "tailwindcss";
+@import 'swiper/css';
+@import 'swiper/css/pagination';
+@import 'swiper/css/navigation';
 
 
 
@@ -24,6 +27,18 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.Toastify__toast--success .Toastify__progress-bar {
+  background: #ffffff !important;
+}
+
+
+.Toastify__toast--success .Toastify__toast-icon svg {
+  fill: #ffffff !important;
+}
+
+
+
 
 a {
   font-weight: 500;

@@ -22,25 +22,30 @@ function Contact() {
       </section>
 
       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 justify-center items-center px-10 mt-10">
-        <div className="flex flex-col bg-gray-900 text-white p-5 rounded-2xl text-center shadow-4xl">
+        <div className="flex flex-col bg-gray-900 text-white p-5 rounded-2xl text-center shadow-lg hover:shadow-sm">
           <FaAddressBook />
           <h3>Address</h3>
-          <p>No 1. Street of the North</p>
+          <p>No 1. Street of the North,</p>
+          <p>westside park indiana road</p>
+
         </div>
-        <div className="flex flex-col bg-gray-900 text-white p-5 rounded-2xl text-center">
+        <div className="flex flex-col bg-gray-900 text-white p-5 rounded-2xl text-center shadow-lg hover:shadow-sm">
           <FaPhone />
           <h3>Call us </h3>
           <p>+12345678</p>
+          <p className=" italic"> we're available 24/7</p>
         </div>
-        <div className="flex flex-col bg-gray-900 text-white p-5 rounded-2xl text-center">
+        <div className="flex flex-col bg-gray-900 text-white p-5 rounded-2xl text-center shadow-lg hover:shadow-sm">
           <FaMailBulk />
           <h3>Email us</h3>
           <p>trustmedical@site</p>
+          <p>info@trustmedical.com</p>
         </div>
-        <div className="flex flex-col bg-gray-900 text-white p-5 rounded-2xl text-center">
+        <div className="flex flex-col bg-gray-900 text-white p-5 rounded-2xl text-center shadow-lg hover:shadow-sm">
           <FaClock />
           <h3>Working hours</h3>
-          <p>Mon - Friday</p>
+          <p>Mon -Fri 9:00am - 5:00pm</p>
+           <p>Sat-Sun 10:00am - 12:00pm</p>
         </div>
       </section>
 
@@ -100,7 +105,7 @@ function Contact() {
         <button
           type="submit"
           disabled={state.submitting}
-          className="mt-8 bg-gray-900 text-white px-6 py-3 rounded hover:bg-gray-700"
+          className="mt-8 bg-gray-900 text-white px-6 py-3 rounded hover:bg-gray-700 shadow-lg"
         >
           Send Message
         </button>

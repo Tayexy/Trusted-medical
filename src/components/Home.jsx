@@ -2,6 +2,9 @@ import React, {useState} from 'react'
 import image1 from "../assets/medical2.jpg";
 import { Link } from 'react-router';
 import { useForm, ValidationError } from '@formspree/react';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import blogPosts from "./blogData";
 
 function Home() {
   const [email, setEmail] = useState("");
@@ -59,7 +62,7 @@ function Home() {
         <div className="flex flex-col md:flex-row justify-center items-center gap-10 text-lg mt-10">
           <div className="basis-1/3 text-black text-left pl-4">
             <p>
-              At Trusted Medical, we connect you with experienced medical professionals who help you understand your health options, treatment plans,
+            Trusted Medical is an NGO base services, we connect you with experienced medical professionals who help you understand your health options, treatment plans,
               and next steps. Our goal is to make healthcare decisions easier and stress-free.
             </p>
             <button className="bg-gray-900 text-white mt-5 px-4 py-2 rounded shadow-lg hover:bg-black"><Link to="/About" className="text-white hover:text-amber-50">Read More</Link>
@@ -129,17 +132,99 @@ function Home() {
         </form>
       </div>
 
-      <section className="mt-10">
-        <h3 className="text-center text-black text-2xl font-bold">What Our Clients Say</h3>
-        <div className="flex justify-center items-center">
-          <h4 className="">“The consultation was clear and professional. I finally understood my treatment options.”</h4>
-          <p>Elmida Terry</p>
-           <h4 className="">““Their second opinion helped me make the right health decision.”</h4>
-          <p>Amanda</p>
-           <h4 className="">““Excellent service and very easy to use.”</h4>
-          <p>Clement</p>
+    <section className="mt-10">
+      <h3 className="text-center text-black text-2xl font-bold mb-6">
+        What Our Clients Say
+      </h3>
+
+      <div className="w-full  mx-auto">
+        <Swiper
+          modules={[Pagination, Navigation, Autoplay]}
+          spaceBetween={30}
+          slidesPerView={1}
+          autoplay={{ delay: 4000 }}
+          pagination={{ clickable: true }}
+          className="rounded-lg shadow-lg"
+        >
+          <SwiperSlide>
+            <div className="text-center px-6 py-8">
+              <h4 className="text-lg italic">
+                “The consultation was clear and professional. I finally understood my treatment options.”
+              </h4>
+              <p className="mt-2 font-semibold">Elmida Terry</p>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="text-center px-6 py-8">
+              <h4 className="text-lg italic">
+                “Their second opinion helped me make the right health decision.”
+              </h4>
+              <p className="mt-2 font-semibold">Amanda</p>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="text-center px-6 py-8">
+              <h4 className="text-lg italic">
+                “Excellent service and very easy to use.”
+              </h4>
+              <p className="mt-2 font-semibold">Clement</p>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+      </div>
+    </section>
+
+    <section className="mt-16 px-4">
+  <h2 className="text-2xl font-bold text-center mb-8 text-black">
+    Latest Health Articles
+  </h2>
+
+  <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+    {blogPosts.slice(0,3).map((post) => (
+      <div key={post.id} className="bg-white shadow-lg rounded-lg overflow-hidden">
+
+        <img
+          src={post.image}
+          alt={post.title}
+          className="w-full h-48 object-cover"
+        />
+
+        <div className="p-4">
+
+          <h3 className="font-semibold text-lg mb-2">
+            {post.title}
+          </h3>
+
+          <p className="text-gray-600 text-sm">
+            {post.excerpt}
+          </p>
+
+          <Link
+            to={`/blog/${post.id}`}
+            className="inline-block mt-4 text-blue-600 font-semibold hover:underline"
+          >
+            Read More →
+          </Link>
+
         </div>
-      </section>
+      </div>
+    ))}
+
+  </div>
+
+  <div className="text-center mt-8">
+    <Link
+      to="/blog"
+      className="bg-gray-900 text-white px-6 py-2 rounded hover:bg-black"
+    >
+      View All Articles
+    </Link>
+  </div>
+</section>
+
 
       
     </>

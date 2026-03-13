@@ -28,6 +28,7 @@ function Services() {
              </section>
 
               <section className="flex flex-col items-center justify-center text-black mt-10">
+                <h2 className="text-center text-black font-bold text-3xl mb-10">WHAT WE OFFER</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-2xl">
         <div className="flex flex-col text-white p-5 rounded-sm shadow-lg transform hover:-translate-y-1 transition duration-300 text-center">
             <h4 className="text-black font-bold text-2xl">Second Medical Opinion</h4>
@@ -52,16 +53,16 @@ function Services() {
       <h2 className="text-2xl font-bold">Why Choose Us</h2>
       <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mt-10 px-4  overflow-hidden">
         <div className="basis-1/3 text-white p-5 rounded-sm shadow-lg transform hover:-translate-y-1 transition duration-300 text-center">
-            <h4 className="text-black font-bold">Experienced medical professionals</h4>
+            <h4 className="text-black font-bold">Confidential and secure</h4>
         </div>
         <div className="basis-1/3 text-white p-5 rounded-sm shadow-lg transform hover:-translate-y-1 transition duration-300 text-center">
-            <h4 className="text-black font-bold">Fast and easy consultation process</h4>
-        </div>
-        <div className="basis-1/3  text-white p-5 rounded-sm shadow-lg transform hover:-translate-y-1 transition duration-300 text-center">
             <h4 className="text-black font-bold">Patient-centered approach</h4>
         </div>
+        <div className="basis-1/3  text-white p-5 rounded-sm shadow-lg transform hover:-translate-y-1 transition duration-300 text-center">
+            <h4 className="text-black font-bold">Fast and easy consultation process</h4>
+        </div>
          <div className="basis-1/3  text-white p-5 rounded-sm shadow-lg transform hover:-translate-y-1 transition duration-300 text-center">
-            <h4 className="text-black font-bold">Affordable and transparent pricing</h4>
+            <h4 className="text-black font-bold">Experienced medical professionals</h4>
         </div>
         </div>
       </section>

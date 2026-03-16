@@ -3,8 +3,8 @@ import { useParams, Link } from "react-router-dom";
 import blogPosts from "./blogData";
 
 export default function BlogPost() {
-  const { id } = useParams();
-  const post = blogPosts.find((p) => p.id === parseInt(id));
+  const { slug } = useParams();
+  const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
     return <h2 className="text-center text-2xl mt-20">Post not found</h2>;
@@ -17,7 +17,7 @@ export default function BlogPost() {
       <img
         src={post.image}
         alt={post.title}
-        className="w-full h-[400px] object-cover rounded-lg"
+        className="w-full h-48 object-cover rounded-lg sm:h-64 md:h-full"
       />
 
       {/* Title */}

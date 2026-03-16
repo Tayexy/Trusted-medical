@@ -1,8 +1,20 @@
+import checkUpImg from "../assets/checkup.jpg";
+import healthyImg from "../assets/Healthy.png";
+import mentalImg from "../assets/mental.webp";
+import telemedicineImg from "../assets/telemedicine.jpeg";
+import immuneImg from "../assets/skincare.png";
+
+
+
+
+
+
 const blogPosts = [
   {
     id: 1,
     title: "The Importance of Regular Health Checkups",
-    image: "src/assets/check-up.jpg",
+    slug: "the-importance-of-regular-health-checkups",
+    image: checkUpImg,
     excerpt: "Many people only visit a doctor when they feel sick. However, regular health checkups are one of the most important steps you can take to protect your long-term health.",
     content: `
       Why Regular Health Checkups Matter
@@ -51,7 +63,8 @@ Regular medical checkups are an essential part of preventive healthcare. Schedul
   {
     id: 2,
     title: "How to Maintain a Healthy Lifestyle",
-    image: "src/assets/Healthy.png",
+    slug: "How to Maintain a Healthy Lifestyle",
+    image: healthyImg,
     excerpt: "Maintaining good health does not require complicated routines. Small daily habits can make a significant difference in your physical and mental well-being.",
     content: `
       Simple Habits for a Healthier Life
@@ -114,7 +127,8 @@ A healthy lifestyle is built on consistent habits. By making small but positive 
   {
     id: 3,
     title: "Understanding the Importance of Mental Health",
-    image: "src/assets/mental.webp",
+    slug: "Understanding the Importance of Mental Health",
+    image: mentalImg,
     excerpt: "Mental health is just as important as physical health. It affects how we think, feel, and behave in everyday life.",
     content: `
       Why Mental Health Matters
@@ -169,7 +183,8 @@ Taking care of mental health is essential for a balanced and fulfilling life. Re
   {
     id: 4,
     title: "The Role of Telemedicine in Modern Healthcare",
-    image: "src/assets/telemedicine.jpeg",
+    slug: "The Role of Telemedicine in Modern Healthcare",
+    image: telemedicineImg,
     excerpt: "Telemedicine is the use of technology to provide medical consultations remotely. Patients can communicate with healthcare professionals using video calls, phone calls, or online messaging.",
     content: `
       What Is Telemedicine?
@@ -216,7 +231,8 @@ Telemedicine is transforming the way patients interact with healthcare professio
   {
     id: 5,
     title: "How to Strengthen Your Immune System Naturally",
-    image: "src/assets/skincare.png",
+    slug: "How to Strengthen Your Immune System Naturally",
+    image: immuneImg,
     excerpt: "The immune system is your body’s natural defense against infections, viruses, and diseases. A strong immune system helps your body recognize harmful microorganisms and fight them effectively.",
     content: `
       Understanding Your Immune System

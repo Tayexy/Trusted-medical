@@ -34,7 +34,7 @@ function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/termsandcondition" element={<Termsandcondition />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<BlogPost />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/auth" element={<Auth />} />
       </Routes>
       <Footer />

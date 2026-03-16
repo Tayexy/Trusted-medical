@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import emailjs from "emailjs-com"
 import { useAuth } from "../context/useAuth";
 import { toast } from "react-toastify";
+import lock from "../assets/lock.jpg";
 
 function Booking() {
  const [name, setName] =useState("");
@@ -71,7 +72,29 @@ function handleSubmit(e) {
   return (
     <div>
       {!user ? (
-        <p className="text-center text-lg font-bold">💙 Your health journey starts here. Please login to book your appointment.</p>
+       <section className="text-center text-black mt-7">
+  <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mt-10 px-4 overflow-hidden">
+    
+    {/* Image on the left */}
+    <div className="basis-1/3 p-5 rounded-sm shadow-lg transform hover:-translate-y-1 transition duration-300">
+      <img
+        src={lock}
+        alt="lock"
+        className="w-full h-full object-cover rounded-lg shadow-md "
+      />
+    </div>
+
+    {/* Text on the right */}
+    <div className="basis-1/3 p-5 rounded-sm shadow-lg transform hover:-translate-y-1 transition duration-300 text-center">
+      <h4 className="text-black font-bold text-2xl mb-4">Sign In Required</h4>
+      <p className="text-black">
+       You need to sign in to book a session with our health professional.
+      </p>
+    </div>
+    
+  </div>
+</section>
+
       ) :(
     <>
    <section className="bg-gray-900 text-white text-center p-6 md:p-10">

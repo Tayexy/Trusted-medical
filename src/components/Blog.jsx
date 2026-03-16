@@ -12,7 +12,7 @@ export default function Blog() {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {blogPosts.map((post) => (
           <div
-            key={post.id}
+            key={post.slug}
             className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
           >
             <img
@@ -27,7 +27,7 @@ export default function Blog() {
               <p className="text-gray-600 mb-4">{post.excerpt}</p>
 
               <Link
-                to={`/blog/${post.id}`}
+                to={`/blog/${post.slug}`}
                 className="text-blue-600 font-medium hover:underline"
               >
                 Read More →

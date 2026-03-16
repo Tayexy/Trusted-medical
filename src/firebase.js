@@ -3,7 +3,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA0FXk5WQycTc7rsTZkSZHgX38S0fAHvxI",
+  apiKey: "import.meta.env.VITE_FIREBASE_API_KEY",
   authDomain: "paysample.firebaseapp.com",
   projectId: "paysample",
   storageBucket: "paysample.firebasestorage.app",

@@ -10,15 +10,13 @@
     justify-content: center;
     align-items: center;
     background-color:white;
-    box-shadow: inset 8px 8px 8px 0.5 black;
 }
 
 .email-input {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 1.2rem;
-  
+  margin-bottom: 1.2rem; 
 }
 
 .email-input label {
@@ -90,9 +88,6 @@
   border-color: #dc2626;
 }
 
-
-
-
 .signin-button{
     display: flex;
     justify-content: center;
@@ -105,6 +100,7 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
 .signout-button{
     display: flex;
     justify-content: center;

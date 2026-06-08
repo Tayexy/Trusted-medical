@@ -5,10 +5,16 @@ import { useForm, ValidationError } from '@formspree/react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import blogPosts from "./blogData";
+import CountUp from 'react-countup';
+import {useInView} from 'react-intersection-observer';
+
+
+
 
 function Home() {
   const [email, setEmail] = useState("");
   const [state, handleSubmit] = useForm(import.meta.env.VITE_FORMSPREE_USEFORM);
+  const {ref, inView} = useInView ({threshold: 0.5, triggerOnce: false});
   if (state.succeeded) {
       return <p className="text-center text-white bg-gray-900 p-10">Thank you for joining our free medical insight list</p>;
   }
@@ -55,6 +61,16 @@ function Home() {
           ✔ Confidential & Reliable
         </div>
       </section>
+
+<div>
+  <h2 ref={ref} className="text-center text-black text-3xl font-bold mt-10">
+    Trusted By {inView && (<CountUp key={inView} start={20} end={5000} duration={3} />)}+ Users
+  </h2>
+</div>
+
+
+
+
 
       {/* About Section */}
       <section className="mt-4">

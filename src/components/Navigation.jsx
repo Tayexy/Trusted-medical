@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Navigation.css"; // we'll add styles here
 import { useAuth } from "../context/useAuth";
 
+
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user, logout } = useAuth();
@@ -45,8 +46,12 @@ const Navigation = () => {
             {user ? "Sign Out" : "Sign In"}
           
         </li>
+        
       </nav>
+      
+      
     </header>
+    
   );
 };
 
